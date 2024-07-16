@@ -1,0 +1,51 @@
+@import url(../../App.css);
+
+
+
+.contenedor_buscador {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    padding: 10px 20px;
+    margin-top: 1.2rem;
+}
+
+#input_box {
+    width: 93%;
+    padding: 10px 20px;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    border: 2px solid #36363634;
+    color: #212121;
+    border-right: 2px solid var(--color-azul);
+}
+
+.contenedor_buscador button {
+    padding: 10px 15px;
+    background-color: #072B61;
+    border-radius: 0 20px 20px 0;
+    border:2px solid #072B61;
+    cursor: pointer;
+}
+
+.contenedor_buscador button:hover {
+    background-color: #063c8d;
+}
+
+
+.icono_busqueda{
+    width: 25px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.contenedor_buscador input::placeholder {
+    color: #555;
+}
+
+@media screen and (max-width: 700px){
+    .contenedor_buscador {
+        width: 80%;
+    }
+}

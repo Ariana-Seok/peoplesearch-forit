@@ -1,0 +1,40 @@
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 15vh;
+    padding: 2rem 1rem;
+    background-color: #072B61;
+    color: white;
+}
+
+.contenedor_iconos {
+    width: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.ancla_icono {
+    color: #fafafa;
+    text-decoration: none;
+    font-size: 1.7rem;
+    margin: 0 0.4rem 0.4rem 0;
+}
+
+.ancla_icono:hover {
+    color: white;
+}
+
+footer p {
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+footer p span {
+    font-weight: 600;
+}

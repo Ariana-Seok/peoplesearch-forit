@@ -1,29 +1,26 @@
-import './card.css';
-import propTypes from 'prop-types';
 import { BiSolidUserCircle } from "react-icons/bi";
+import propTypes from 'prop-types';
+import "./card.css"
 
 function Card({ id, nombre, usuario, email, ciudad, telefono, nombreEmpresa}) {
+    return (  
+        <>
+        <div className="card-group p-3">
+            <div className="card d-flex align-items-center p-4 m-3" key={id}>
+                <BiSolidUserCircle className='fs-1 my-2'/>
+                <h5 className="card-title fs-5 text-uppercase fw-bolder py-2">{nombre}</h5>
+                <p className="card-text"><span className="fw-medium">Usuario: </span>{usuario}</p>
+                <p className="card-text"><span className="fw-medium">Email: </span>{email}</p>
+                <p className="card-text"><span className="fw-medium">Ciudad: </span>{ciudad}</p>
+                <p className="card-text"><span className="fw-medium">Telefono: </span>{telefono}</p>
+                <p className="card-text"><span className="fw-medium">Empresa: </span>{nombreEmpresa}</p>
+            </div>
+        </div>
+        </>
 
-return (
-    <div className='card' key={id}>
-        <BiSolidUserCircle className='icono_user'/>
-        <h4 className='titulo'>Datos</h4>
-        <p>Nombre:</p>
-        <span className='card__dato'>{nombre}</span>
-        <p>Usuario:</p>
-        <span className='card__dato'>{usuario}</span>
-        <p>Email:</p>
-        <span className='card__dato'>{email}</span>
-        <p>Ciudad:</p>
-        <span className='card__dato'>{ciudad}</span>
-        <p>Telefono: </p>
-        <span className='card__dato'>{telefono}</span>
-        <p>Empresa:</p>
-        <span className='card__dato'>{nombreEmpresa}</span>
-
-    </div>
     );
 }
+
 
 Card.propTypes = {
     id: propTypes.number.isRequired,
@@ -34,5 +31,6 @@ Card.propTypes = {
     telefono: propTypes.string.isRequired,
     nombreEmpresa: propTypes.string.isRequired,
 };
+
 
 export default Card;

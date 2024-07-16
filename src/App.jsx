@@ -1,35 +1,27 @@
-import { useState, useEffect } from 'react';
 import './App.css';
-import Card from './components/card/card';
+import SearchBar from './components/searchBar/SearchBar';
+import { TbUserSearch } from "react-icons/tb";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'animate.css';
+import Footer from './components/footer/footer';
 
 function App() {
-  const [data, setData] = useState(null);
-
-  useEffect( () => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((data) => setData(data));
-  }, []);
-
   return (
     <div className='App'>
-        <h1 className='app_titulo'>PeopleSearch</h1>
+      <main className='main'>
+        <h1 className='app_titulo animate__animated animate__pulse'>PeopleSearch <TbUserSearch className='icono_titulo'/></h1>
+        <p className='slogan'>Datos Personales al Instante</p>
+        
+        <SearchBar />
+        
+      </main>
+      
+      <Footer/>
 
-        <div className="contenedor_cards">
-          {data?.map((user) => (
-            <Card
-              key={user.id}
-              nombre={user.name}
-              usuario={user.username}
-              email={user.email}
-              ciudad={user.address.city}
-              telefono={user.phone}
-              nombreEmpresa={user.company.name}
-              />
-          ))}
-        </div>
     </div>
   );
 }
+
+
 
 export default App;
