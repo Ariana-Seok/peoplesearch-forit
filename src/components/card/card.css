@@ -1,0 +1,57 @@
+.card {
+    width: 20rem;
+    background: linear-gradient(0deg, rgba(226,193,243,1) 0%, rgba(227,225,248,1) 100%);
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 2rem 1.5rem;
+}
+
+.icono_user {
+    display: block;
+    font-size: 5.5rem;
+    margin: 0 auto;
+    color: #686095;
+
+}
+
+.titulo {
+    padding: 0.5rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #7D7AC1;
+}
+
+.card__nombre {
+    padding: 0.5rem 0;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #7D7AC1;
+    font-weight: 700;
+}
+
+.card_datos_personales {
+    color: #686095;
+    list-style: none;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+.card p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #212121;
+    padding-left: 0.5rem;
+}
+
+.card__dato {
+    display: block;
+    padding: 0.5rem 0.5rem 0.5rem 0.8rem;
+    margin-top: 0.5rem;
+    background-color: #FAFAFA;
+    border-radius: 30px;
+    color: #686095;
+}
