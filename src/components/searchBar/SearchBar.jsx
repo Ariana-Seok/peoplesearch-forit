@@ -1,39 +1,26 @@
+import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { IoSearchSharp } from "react-icons/io5";
 import "./SearchBar.css";
-import { useEffect, useState } from 'react';
+import NewUser from "../newUser/newUser";
 import Card from "../card/Card";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { PropTypes } from 'prop-types';
 
 
-function SearchBar() {
-    const [ users, setUsers ] = useState([]);
+function SearchBar({ usuarios, agregarUsuario }) {
     const [ search, setSearch ] = useState("");
-
-    const URL = "https://jsonplaceholder.typicode.com/users"
-    const showData = async () => {
-        const response = await fetch(URL)
-        const data = await response.json()
-        console.log(data)
-        setUsers(data)
-    }
-
-    useEffect( () => {
-        showData();
-    }, [])
 
     // Metodo de filtrado
     const searcher = (e) => {
         setSearch(e.target.value)
-        console.log(e)
     }
 
-    const results = !search ? users :  users.filter((dato) => 
+
+    const results = !search ? usuarios : usuarios.filter((dato) => 
         dato.name.toLowerCase().includes(search.toLowerCase()) ||
         dato.email.toLowerCase().includes(search.toLowerCase()) ||
         dato.address.city.toLowerCase().includes(search.toLowerCase())
         );
-
-    
 
 
     return (
@@ -43,23 +30,34 @@ function SearchBar() {
                 <input value={search} onChange={searcher} type="text" id="input_box" placeholder="Buscar por nombre / email / ciudad" autoComplete="off"/>
                 <button><IoSearchSharp className='icono_busqueda'/></button>
             </div>  
-            
-            <div className="contenedor_cards card-group d-flex align-items-center justify-content-evenly ">
+
+            <NewUser agregarUsuario={agregarUsuario}/>
+
+            <div className="contenedor_cards card-group row p-4 mb-5">
                 {results?.map((user) => (
-                    <Card
-                        key={user.id}
-                        nombre={user.name}
-                        usuario={user.username}
-                        email={user.email}
-                        ciudad={user.address.city}
-                        telefono={user.phone}
-                        nombreEmpresa={user.company.name}
+                    <div className="col-12 col-md-6 col-lg-3 d-flex justify-content-center" key={user.id}>
+                        <Card
+                            key={user.id}
+                            id={user.id}
+                            nombre={user.name}
+                            usuario={user.username}
+                            email={user.email}
+                            ciudad={user.address.city}
+                            telefono={user.phone}
+                            nombreEmpresa={user.company.name}
                         />
+                    </div>
                 ))}
             </div>
         </div>
         </>
     )
 }
+
+
+SearchBar.propTypes =  {
+    usuarios: PropTypes.array.isRequired,
+    agregarUsuario: PropTypes.func.isRequired
+};
 
 export default SearchBar;
