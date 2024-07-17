@@ -1,0 +1,11 @@
+.btn_agregar {
+    background-color: #072B61;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn_agregar:hover {
+    background-color: #023e99;
+    border: 2px solid #072B61;
+}
