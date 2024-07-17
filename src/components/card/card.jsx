@@ -1,21 +1,19 @@
 import { BiSolidUserCircle } from "react-icons/bi";
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import "./card.css"
 
 function Card({ id, nombre, usuario, email, ciudad, telefono, nombreEmpresa}) {
     return (  
         <>
-        <div className="card-group p-3">
-            <div className="card d-flex align-items-center p-4 m-3" key={id}>
-                <BiSolidUserCircle className='fs-1 my-2'/>
-                <h5 className="card-title fs-5 text-uppercase fw-bolder py-2">{nombre}</h5>
-                <p className="card-text"><span className="fw-medium">Usuario: </span>{usuario}</p>
-                <p className="card-text"><span className="fw-medium">Email: </span>{email}</p>
-                <p className="card-text"><span className="fw-medium">Ciudad: </span>{ciudad}</p>
-                <p className="card-text"><span className="fw-medium">Telefono: </span>{telefono}</p>
-                <p className="card-text"><span className="fw-medium">Empresa: </span>{nombreEmpresa}</p>
+            <div className="card p-4 m-3" key={id} >
+                <BiSolidUserCircle className='fs-1 my-2 text-center icono_usuario'/>
+                <h5 className="card-title fs-5 text-uppercase fw-bolder py-2 text-center">{nombre}</h5>
+                <p className="card-text"><span className="fw-semibold">Usuario: </span>{usuario}</p>
+                <p className="card-text"><span className="fw-semibold">Email: </span>{email}</p>
+                <p className="card-text"><span className="fw-semibold">Ciudad: </span>{ciudad}</p>
+                <p className="card-text"><span className="fw-semibold">Telefono: </span>{telefono}</p>
+                <p className="card-text"><span className="fw-semibold">Empresa: </span>{nombreEmpresa}</p>
             </div>
-        </div>
         </>
 
     );
@@ -23,13 +21,13 @@ function Card({ id, nombre, usuario, email, ciudad, telefono, nombreEmpresa}) {
 
 
 Card.propTypes = {
-    id: propTypes.number.isRequired,
-    nombre: propTypes.string.isRequired,
-    usuario: propTypes.string.isRequired,
-    email: propTypes.string.isRequired,
-    ciudad: propTypes.string.isRequired,
-    telefono: propTypes.string.isRequired,
-    nombreEmpresa: propTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    nombre: PropTypes.string.isRequired,
+    usuario: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    ciudad: PropTypes.string.isRequired,
+    telefono: PropTypes.string.isRequired,
+    nombreEmpresa: PropTypes.string.isRequired,
 };
 
 
