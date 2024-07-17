@@ -12,7 +12,7 @@ function Footer() {
                 <a href="mailto:danielafernandezlauradfl@gmail.com" className='ancla_icono'><IoMail /></a>
             </div>
             
-            <p><span>Desarrollado por:</span> Daniela Fernandez Laura</p>
+            <p><span className='fw-semibold'>Desarrollado por:</span> Daniela Fernandez Laura</p>
         </footer>
         </>
 
