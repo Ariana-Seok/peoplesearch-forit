@@ -1,3 +1,17 @@
 .card {
     background: linear-gradient(0deg, rgba(193, 205, 243, 0.651) 0%, rgba(225, 234, 248, 0.527) 100%);
+    width: 20rem;
+    height: 25rem;
+}
+
+.icono_usuario {
+    display: block;
+    margin: 0 auto;
+}
+
+
+.card-text {
+    text-align: start;
+    text-overflow: ellipsis;
+    white-space: wrap;
 }
